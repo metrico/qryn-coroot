@@ -14,6 +14,8 @@ services:
     image: ghcr.io/coroot/coroot-node-agent
     container_name: exporter
     restart: unless-stopped
+    expose:
+      - 80
     volumes:
       - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
       - /sys/kernel/debug:/sys/kernel/debug:rw
