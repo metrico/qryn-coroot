@@ -20,8 +20,11 @@ docker-compose up -d
 
 ### Coroot UI
 #### Configuration
-Create a new project and point it at your **qryn** API endpoint
+On your first usage, create a new project and point it at your **qryn** API endpoint
+
 ![image](https://user-images.githubusercontent.com/1423657/205444113-b52ddc6c-c8a1-4e38-b6ed-2e8cc26bd5ed.png)
 
 #### Usage
+Once metrics are being collected they will automatically display in the coroot user interface
+
 ![image](https://user-images.githubusercontent.com/1423657/205444050-21fb7a10-d0d0-4cf1-85fb-98ba3141ec71.png)
