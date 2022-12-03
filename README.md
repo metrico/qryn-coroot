@@ -5,7 +5,8 @@ Tutorial: qryn + coroot node agent
 
 The [Coroot Node-agent]((https://coroot.com/docs/metric-exporters/node-agent) ) is a Prometheus exporter based on eBPF that gathers comprehensive container metrics.
 
-<img src="https://user-images.githubusercontent.com/1423657/205441435-7e69e252-b47a-45bf-86a7-1552b3731db6.png" width=600px />
+<img src="https://user-images.githubusercontent.com/1423657/205445466-67a81963-e593-47c3-ad73-8365e68d9e4f.png" width=800px />
+
 
 ## Requirements
 - qryn
