@@ -9,11 +9,11 @@ The [Coroot Node-agent]((https://coroot.com/docs/metric-exporters/node-agent) ) 
 
 
 ## Requirements
-- qryn
-- grafana
+- [qryn](https://qryn.dev) or [qryn.cloud](https://qryn.cloud)
+- [grafana](https://grafana.com)
 
 ## Usage
-The provided compose will spin up a coroot-agent and vector scraper pointed at your qryn instance
+The provided `docker-compose` will spin up a coroot-agent and vector scraper pointed at your qryn instance
 ```
 export QRYN_URL=http://qryn:3100/prom/remote/write
 docker-compose up -d
