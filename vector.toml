@@ -1,0 +1,11 @@
+[sources.prom_scrape]
+type = "prometheus_scrape"
+endpoints = [ "http://coroot-node-agent:80/metrics" ]
+scrape_interval_secs = 15
+instance_tag = "instance"
+endpoint_tag = "endpoint"
+
+[sinks.prom_write]
+type = "prometheus_remote_write"
+inputs = [ "prom_scrape" ]
+endpoint = "${QRYN_URL:-http://qryn:3100/prom/remote/write}"
