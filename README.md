@@ -28,3 +28,5 @@ On your first usage, create a new project and point it at your **qryn** API endp
 Once metrics are being collected they will automatically display in the coroot user interface
 
 ![image](https://user-images.githubusercontent.com/1423657/205444050-21fb7a10-d0d0-4cf1-85fb-98ba3141ec71.png)
+
+![ezgif com-gif-maker (15)](https://user-images.githubusercontent.com/1423657/205444493-4b3ec904-ff72-424a-b272-9a9e2503594a.gif)
