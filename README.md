@@ -18,3 +18,10 @@ export QRYN_URL=http://qryn:3100/prom/remote/write
 docker-compose up -d
 ```
 
+### Coroot UI
+#### Configuration
+Create a new project and point it at your **qryn** API endpoint
+![image](https://user-images.githubusercontent.com/1423657/205444113-b52ddc6c-c8a1-4e38-b6ed-2e8cc26bd5ed.png)
+
+#### Usage
+![image](https://user-images.githubusercontent.com/1423657/205444050-21fb7a10-d0d0-4cf1-85fb-98ba3141ec71.png)
