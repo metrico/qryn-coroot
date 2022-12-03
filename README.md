@@ -1,9 +1,12 @@
 <img src="https://user-images.githubusercontent.com/1423657/173144443-fc7ba783-d5bf-47f9-bf59-707693da5ed1.png" width=200px />
 
 # qryn + coroot
-Tutorial: qryn + coroot node agent
+Tutorial: [qryn](https://qryn.dev) + [coroot](https://coroot.com/docs/coroot-community-edition)
 
-The [Coroot Node-agent]((https://coroot.com/docs/metric-exporters/node-agent) ) is a Prometheus exporter based on eBPF that gathers comprehensive container metrics.
+
+Coroot is a _qryn compatible_ open-source monitoring and troubleshooting tool for microservice architectures.
+
+In this tutorial we'll use Coroot and the [Coroot Node-agent](https://coroot.com/docs/metric-exporters/node-agent) to collect system and application metrics using eBPF without any action or code instrumentation.
 
 <img src="https://user-images.githubusercontent.com/1423657/205445466-67a81963-e593-47c3-ad73-8365e68d9e4f.png" width=800px />
 
