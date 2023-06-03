@@ -9,3 +9,4 @@ endpoint_tag = "endpoint"
 type = "prometheus_remote_write"
 inputs = [ "prom_scrape" ]
 endpoint = "${QRYN_URL:-http://qryn:3100/prom/remote/write}"
+healthcheck.enabled = false
