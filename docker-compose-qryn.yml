@@ -1,0 +1,68 @@
+version: '2.1'
+
+services:
+
+  clickhouse-server:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse-server
+    restart: unless-stopped
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+    environment:
+      - CLICKHOUSE_USER=qryn
+      - CLICKHOUSE_PASSWORD=demo
+    expose:
+       - 8123
+    ports:
+      - "8123:8123"
+    healthcheck:
+      test: ['CMD', 'wget', '--spider', '-q', '127.0.0.1:8123/ping']
+      interval: 1s
+      timeout: 1s
+      retries: 30
+
+  qryn:
+    image: qxip/qryn:latest
+    container_name: qryn
+    restart: unless-stopped
+    expose:
+      - 3100
+    ports:
+      - "3100:3100"
+    environment:
+      - CLICKHOUSE_SERVER=clickhouse-server
+      - CLICKHOUSE_AUTH=qryn:demo
+      - NODE_OPTIONS="--max-old-space-size=4096"
+    depends_on:
+       clickhouse-server:
+         condition: service_healthy
+
+  coroot:
+    image: ghcr.io/coroot/coroot
+    container_name: coroot
+    ports:
+    - "8080:8080"
+    
+  coroot-node-agent:
+    privileged: true
+    pid: host
+    image: ghcr.io/coroot/coroot-node-agent
+    container_name: exporter
+    restart: unless-stopped
+    expose:
+      - 80
+    volumes:
+      - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
+      - /sys/kernel/debug:/sys/kernel/debug:rw
+    command: --cgroupfs-root=/host/sys/fs/cgroup
+
+  vector-coroot:
+    image: timberio/vector:latest-alpine
+    container_name: vector-coroot
+    restart: unless-stopped
+    volumes:
+      - ./vector.toml:/etc/vector/vector.toml:ro
+    environment:
+      - QRYN_URL=https://qryn:3100/prom/remote/write
+    depends_on:
+      - coroot-node-agent
