@@ -8,9 +8,6 @@ Coroot is a _qryn compatible_ open-source monitoring and troubleshooting tool fo
 
 In this tutorial we'll use Coroot and [Coroot Node-agent](https://coroot.com/docs/metric-exporters/node-agent) to collect system and application metrics using eBPF.
 
-<img src="https://user-images.githubusercontent.com/1423657/205445466-67a81963-e593-47c3-ad73-8365e68d9e4f.png" width=800px />
-
-
 ## Requirements
 - [qryn](https://qryn.dev) or [qryn.cloud](https://qryn.cloud)
 - [grafana](https://grafana.com)
